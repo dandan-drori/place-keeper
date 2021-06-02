@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Place Keeper</title>
+	</head>
+	<body onload="init()">
+		<nav>
+			<ul>
+				<li>
+					<a href="user-prefs.html">Preferences</a>
+				</li>
+				<li>
+					<a href="map.html">Map</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<header>Find your way back to your best places</header>
+			<div class="forecast-container" hidden><!-- forecast --></div>
+		</div>
+		<script src="js/services/util-service.js"></script>
+		<script src="js/services/storage-service.js"></script>
+		<script src="js/services/user-pref-service.js"></script>
+		<script src="js/services/place-service.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
