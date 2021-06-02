@@ -38,4 +38,3 @@ function onSubmitForm(ev) {
 function showForecast() {
 	document.querySelector('.forecast-container').hidden = false
 }
-;('AIzaSyAbUCxloNBHZtSXrSe65OslMNLj52B_-R0')
