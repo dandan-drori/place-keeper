@@ -4,9 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/map.css" />
 		<title>Map</title>
 	</head>
 	<body>
-		map
+		<nav>
+			<ul>
+				<li>
+					<a href="index.html">Homepage</a>
+				</li>
+				<li>
+					<a href="user-prefs.html">Preferences</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="map"></div>
+		<button onclick="getPosition()">
+			<img src="img/my_location.png" alt="target" />
+		</button>
+		<section class="places"></section>
+		<script src="js/services/storage-service.js"></script>
+		<script src="js/services/place-service.js"></script>
+		<script src="js/map-controller.js"></script>
+		<script
+			async
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfm1LKS_iiah-t54R0JBYlfmPkEk5AYBA&callback=initMap"
+		></script>
 	</body>
 </html>

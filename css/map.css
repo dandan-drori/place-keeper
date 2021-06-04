@@ -1,0 +1,14 @@
+@import 'global.css';
+
+#map {
+	height: 30rem;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+button img {
+	width: 2rem;
+}

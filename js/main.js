@@ -1,12 +1,13 @@
 'use strict'
 
-var gIsFirstLoad
-
 function init() {
 	displayColors()
-	const randomIdx = getRandomInt(0, 3)
-	const forecast = getForecast(randomIdx)
-	if (gIsFirstLoad) renderForecast(forecast)
+	var data = getData()
+	if (!data || !data.date || !data.time) return
+	var month = +data.date.split('-')[1]
+	var idx = month <= 4 ? 0 : month <= 8 ? 1 : 2
+	const forecast = getForecast(idx)
+	renderForecast(forecast)
 }
 
 function displayColors() {
@@ -15,14 +16,12 @@ function displayColors() {
 	document.body.style.color = fgColor
 }
 
-function renderForecast({ id, title, text }) {
+function renderForecast({ title, text }) {
 	var strHtml = `
-            <p>${id}</p>
             <h2>${title}</h2>
             <p>${text}</p>
     `
-	document.querySelector('.forecast-container').innerHtml = strHtml
-	showForecast()
+	document.querySelector('.forecast').innerHTML = strHtml
 }
 
 function onSubmitForm(ev) {
@@ -32,9 +31,4 @@ function onSubmitForm(ev) {
 	const date = document.querySelector('input[name=date]').value
 	const time = document.querySelector('input[name=time]').value
 	setData(bgColor, fgColor, date, time)
-	gIsFirstLoad = true
-}
-
-function showForecast() {
-	document.querySelector('.forecast-container').hidden = false
 }
