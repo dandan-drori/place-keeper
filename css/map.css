@@ -2,13 +2,74 @@
 
 #map {
 	height: 30rem;
+	max-width: 70%;
+	flex-grow: 1;
 }
 
-button {
+.btn-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: none;
-	background-color: transparent;
+	background-color: #fff;
+	padding: 0.4rem;
+	margin-top: 0.6rem;
+	cursor: pointer;
+	box-shadow: 1px 1px 5px 1px #ccc, -1px -1px 5px 1px #ccc;
 }
 
-button img {
-	width: 2rem;
+.btn-center:hover {
+	background-color: #ddd;
+}
+
+.btn-center img {
+	max-width: 25px;
+}
+
+.container {
+	display: flex;
+}
+
+.places {
+	min-width: 30%;
+}
+
+.places article {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	border-bottom: 2px solid #ccc;
+	padding: 0.5rem 1.5rem;
+}
+
+.column-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.places article h4 {
+	margin-bottom: 0.2rem;
+}
+
+.places article p {
+	font-size: 0.9rem;
+	color: #555;
+}
+
+.places article button {
+	border: none;
+	border-radius: 50%;
+	width: 1.5rem;
+	height: 1.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: white;
+	background-color: #aaa;
+	cursor: pointer;
+}
+
+.places article button:hover {
+	background-color: #888;
+	color: #eee;
 }

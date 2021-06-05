@@ -35,6 +35,22 @@
 				Time:
 				<input type="time" name="time" />
 			</label>
+			<label>
+				Email:
+				<input type="email" name="email" placeholder="Enter email" autocomplete="off" required />
+			</label>
+			<label>
+				Age:
+				<span class="age">30</span>
+				<input
+					type="range"
+					name="age"
+					min="18"
+					max="120"
+					value="30"
+					oninput="showAge(this.value)"
+				/>
+			</label>
 			<button>Submit</button>
 		</form>
 		<script src="js/services/util-service.js"></script>

@@ -13,13 +13,21 @@ function initMap() {
 		map,
 		title: 'marker',
 	})
+	const centerBtn = document.createElement('button')
+	centerBtn.addEventListener('click', getPosition)
+	centerBtn.classList.add('btn-center')
+	centerBtn.innerHTML = `<img src="img/my_location.png" alt="my location" width="40px"/>`
+	map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerBtn)
+
 	map.addListener('click', mapsMouseEvent => {
 		const name = prompt('Location name?')
-		if (!name || !name.length) return
+		if (!name) return
+		const address = prompt('Location address?')
+		if (!address) return
 		const strPos = JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2)
 		const pos = JSON.parse(strPos)
 		placeMarkerAndPanTo(mapsMouseEvent.latLng, map)
-		addPlace(pos, name)
+		addPlace(pos, name, address)
 		displayPlaces()
 	})
 	displayPlaces()
@@ -82,8 +90,10 @@ function displayPlaces() {
 	var strHtmls = places.map(
 		place => `
         <article onclick="panTo(${place.lat}, ${place.lng})">
-            <header>${place.name}</header>
-            <p>Text</p>
+			<div class="column-container">
+            	<h4>${place.name}</h4>
+            	<p>${place.address}</p>
+			</div>
             <button onclick="onRemovePlace(${place.id})">x</button>
         </article>
     `

@@ -32,3 +32,7 @@ function onSubmitForm(ev) {
 	const time = document.querySelector('input[name=time]').value
 	setData(bgColor, fgColor, date, time)
 }
+
+function showAge(age) {
+	document.querySelector('.age').innerText = age
+}

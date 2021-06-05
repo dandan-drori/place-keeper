@@ -2,14 +2,14 @@ const PLACES_KEY = 'places'
 var gPlaces
 var gId = 1
 
-function addPlace(pos, name) {
-	_addPlaceToStorage(pos, name)
+function addPlace(pos, name, address) {
+	_addPlaceToStorage(pos, name, address)
 }
 
-function _addPlaceToStorage({ lat, lng }, name) {
+function _addPlaceToStorage({ lat, lng }, name, address) {
 	let places = loadFromStorage(PLACES_KEY)
 	if (!places) places = []
-	places.push({ id: gId++, lat, lng, name })
+	places.push({ id: gId++, lat, lng, address, name })
 	saveToStorage(PLACES_KEY, places)
 }
 
