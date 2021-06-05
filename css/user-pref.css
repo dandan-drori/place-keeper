@@ -18,3 +18,7 @@ form > button {
 	font-size: 1.1rem;
 	cursor: pointer;
 }
+
+form > button:hover {
+	background-color: rgba(204, 204, 204, 0.7);
+}
